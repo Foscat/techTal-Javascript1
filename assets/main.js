@@ -1,3 +1,24 @@
+// Add event listeners
+
+// Challenge 1
+document.getElementById("button1").addEventListener("click", forloopCup);
+
+// Challenge 2
+document.getElementById("button2").addEventListener("click", swimForLoop);
+
+// Challenge 3
+// Function version
+document.getElementById("button3").addEventListener("click", getAndPost);
+// Reg for loop version
+document.getElementById("button4").addEventListener("click", getBottles);
+// Slide solution answer
+document.getElementById("button5").addEventListener("click", classBottleCount);
+
+
+// document.getElementById
+
+
+
 // Challenge 1 just a little fancy
 var person1 = {
     name: "Joe",
@@ -24,9 +45,11 @@ askQustion = function(drank) {
     }
 }
 
-for(var i = 0; i < people.length; i++){
-    console.log(people[i].name + " has drank " + people[i].cupsDrank + " cups of coffee.");
-    askQustion(people[i].cupsDrank);
+function forloopCup(){
+    for(var i = 0; i < people.length; i++){
+        console.log(people[i].name + " has drank " + people[i].cupsDrank + " cups of coffee.");
+        askQustion(people[i].cupsDrank);
+    }
 }
 
 // End Challenge 1
@@ -88,25 +111,27 @@ inOrOut = function(day){
 constructOutput = function(com){
     console.log(com);
     if(com.i === "in"){
-        console.log("Dont worry about the weather. Our pool is inside.")
+        console.log("Dont worry about the weather. Our pool is inside.");
     }else{
         if(com.p === "wet"){
-            console.log("We can't swim today because of the weather. Our pool is outside and you dont want to be out in that.")
+            console.log("We can't swim today because of the weather. Our pool is outside and you dont want to be out in that.");
         }else{
             if(com.t === "cold"){
-                console.log("It is just a bit too cold to be swimming outside today.")
+                console.log("It is just a bit too cold to be swimming outside today.");
             }else{
-                console.log("The weather is perfect! Enjoy the swim and remember your sunscreen!")
+                console.log("The weather is perfect! Enjoy the swim and remember your sunscreen!");
             }
         }
     }
 }
 
-for(i=0; i<days.length; i++){
-    canWeSwim(days[i]);
-    checkPrecip(days[i]);
-    inOrOut(days[i]);
-    constructOutput(maybe);
+function swimForLoop() {
+    for(i=0; i<days.length; i++){
+        canWeSwim(days[i]);
+        checkPrecip(days[i]);
+        inOrOut(days[i]);
+        constructOutput(maybe);
+    }
 }
 
 // End my way to challenge 2
@@ -126,26 +151,53 @@ checkBottles = function(){
         console.log("Hey we need more beer!")
     }
 }
-checkBottles();
+function getBottles(){
+    checkBottles();
+    document.getElementById("pool").append(countFun);
+}
 console.log(countFun);
 
 
-for(i=0; i < bottles; i++){
-    bottles = bottles - 1;
-    countLoop.push(bottles);
+countForLoop = function(){
+    for(i=0; i < bottles; i++){
+        bottles = bottles - 1;
+        countLoop.push(bottles);
+    }
 }
 console.log(countLoop);
+
+function getAndPost(){
+    countForLoop();
+    document.getElementById("pool").append(countLoop);
+}
 
 // Class example
 let bottle = 99;
 
-for (bottle; bottle >= 0; bottle --){
+function classBottleCount(){
+    for (bottle; bottle >= 0; bottle --){
 
-  if (bottle === 0) {
-    console.log("Hey! Go buy more root beer!");
-  } else {
-      console.log(bottle + " bottles of root beer on the wall");
-  }
+        if (bottle === 0) {
+          console.log("Hey! Go buy more root beer!");
+        } else {
+            console.log(bottle + " bottles of root beer on the wall");
+        }
+      }
 }
 
 // End challenge 3
+
+
+function checkValue(){
+    var int = 0;
+    var string = "0";
+   if(int == string ){
+       console.log("this is true")
+   } 
+   if(int === string ){
+       console.log("you wont see this");
+   } else{
+       console.log("you will see this.")
+   }
+}
+checkValue();

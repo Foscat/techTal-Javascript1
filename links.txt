@@ -1,0 +1,2 @@
+Deployed version: https://foscat.github.io/techTal-Javascript1/.
+Repo: https://github.com/Foscat/techTal-Javascript1
